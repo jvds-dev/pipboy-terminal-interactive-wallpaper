@@ -1,0 +1,54 @@
+/* Tema padrão (verde Pip-Boy) */
+:root {
+    --color-bg: #001900;
+    --color-text: #00ff00;
+    --inverse-color-text: #001d00;
+    --color-accent: #00aa00;
+
+    --screen-radial-gradient: #00ff000d;
+    --screen-linear-gradient: #14ff1410;
+
+    --scanline-first: #00ff001a;
+    --scanline-second: #00ff0000;
+}
+
+[data-theme="green"] {
+    --color-bg: #001900;
+    --color-text: #00ff00;
+    --inverse-color-text: #001d00;
+    --color-accent: #00aa00;
+
+    --screen-radial-gradient: #00ff000d;
+    --screen-linear-gradient: #14ff1410;
+
+    --scanline-first: #00ff001a;
+    --scanline-second: #00ff0000;
+}
+
+/* Tema azul */
+[data-theme="blue"] {
+    --color-bg: #001133;
+    --color-text: #00c3ff;
+    --inverse-color-text: #00111d;
+    --color-accent: #00c3ff;
+
+    --screen-radial-gradient: #0004ff0d;
+    --screen-linear-gradient: #1814ff10;
+
+    --scanline-first: #0026ff1a;
+    --scanline-second: #0011ff00;
+}
+
+/* Tema âmbar */
+[data-theme="amber"] {
+    --color-bg: #1a0d00;
+    --color-text: #ffbf00;
+    --inverse-color-text: #1d1a00;
+    --color-accent: #ff8000;
+
+    --screen-radial-gradient: #ffbb000d;
+    --screen-linear-gradient: #ffa11410;
+
+    --scanline-first: #ffc4001a;
+    --scanline-second: #ffbb0000;
+}

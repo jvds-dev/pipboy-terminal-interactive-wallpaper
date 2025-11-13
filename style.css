@@ -1,0 +1,254 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Agency';
+    src: url('fonts/AGENCYB.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    /* font-display: swap; */
+}
+
+html {
+    background: #000;
+
+}
+
+body {
+    filter: contrast(1.1) saturate(1.2);
+    overflow: hidden;
+}
+
+.screen {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.screen::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, var(--screen-radial-gradient) 0%, #000000cc 90%);
+    pointer-events: none;
+    z-index: 5;
+}
+
+
+.screen::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(to bottom,
+            #00000000 0px,
+            var(--screen-linear-gradient) 3px,
+            #00000000 4px);
+    pointer-events: none;
+    z-index: 10;
+    mix-blend-mode: lighten;
+    animation: lines .4s linear infinite;
+}
+
+@keyframes flicker {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.98;
+    }
+
+    51% {
+        opacity: 1;
+    }
+}
+
+@keyframes lines {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 0 4px;
+    }
+}
+
+.screen {
+    animation: flicker 0.12s infinite;
+}
+
+
+.pipboy-container {
+    /* background: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 100%; */
+    /* height: 100%; */
+}
+
+.pipboy-container img {
+    width: 300px;
+    /* height: 100%; */
+}
+
+.pipboy {
+    filter: drop-shadow(0 0 2px var(--color-text)) drop-shadow(0 0 10px var(--color-text));
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: red; */
+    width: 100%;
+    height: 15%;
+}
+
+header ul {
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+    align-items: center;
+    /* gap: 24px; */
+}
+
+header ul li {
+    list-style-type: none;
+
+    button {
+        background: none;
+        border: none;
+        font-size: 22px;
+        color: var(--color-text);
+        cursor: pointer;
+        font-family: 'Agency';
+        letter-spacing: 2px;
+        font-weight: bold;
+        text-shadow: 0 0 6px var(--color-text);
+    }
+}
+
+.scan-line {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(to top,
+            var(--scanline-first) 0%,
+            var(--scanline-second) 80%);
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    animation: scanline 7s ease infinite;
+    z-index: 20;
+}
+
+@keyframes scanline {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: red; */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: opacity 0.3s ease;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.apps {
+    /* background: red; */
+    width: 50%;
+    height: 50%;
+    /* z-index: 21; */
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* align-items: center; */
+
+        li {
+            color: var(--color-text);
+            list-style: none;
+            text-align: left;
+            font-family: "Agency";
+            font-size: 20px;
+            letter-spacing: 1px;
+            /* text-shadow: none; */
+            text-transform: uppercase;
+            text-shadow: 0 0 6px var(--color-text);
+            padding:  0 4px;
+
+            /* text-decoration-style: none; */
+        }
+
+        li:hover {
+            background: var(--color-text);
+            color: #001d00;
+            text-shadow: 0 0 6px var(--color-text);
+
+        }
+    }
+
+}
+
+.themes{
+    /* background: red; */
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        li{
+            /* background: green; */
+            list-style: none;
+            font-size: 20px;
+            font-family: 'Agency';
+            letter-spacing: 2px;
+            color: var(--color-text);
+            text-transform: uppercase;
+            text-shadow: 0 0 6px var(--color-text);
+            background-color: var(--color-bg);
+            padding: 4px 8px;
+            border: 2px solid var(--color-text);
+            cursor: pointer;
+            transition: all .2s ease;
+        }
+        li:hover{
+            color: var(--color-bg);
+            background-color: var(--color-text);
+        }
+    }
+
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="green">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="themes.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="screen">
+        <div class="pipboy-container page" data-page="status-page">
+            <img class="pipboy" src="images/white/pip1.png" alt="">
+        </div>
+        <div class="page hidden" data-page="inventory-page">
+            <div class="apps">
+                <ul>
+                    <li>Notepad</li>
+                    <li>Explorer</li>
+                    <li>Browser</li>
+                    <li>Vscode</li>
+                    <li>Calculator</li>
+                    <li>Steam</li>
+                </ul>
+            </div>
+        </div>
+        <div class="page hidden" data-page="data-page">
+            <div class="themes">
+                <ul>
+                    <li data-theme-target="green">Verde</li>
+                    <li data-theme-target="amber">Âmbar</li>
+                    <li data-theme-target="blue">Azul</li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="page hidden" data-page="map-page">
+            <h1>map</h1>
+        </div>
+        <div class="page hidden" data-page="radio-page">
+            <h1>radio</h1>
+        </div>
+        <div class="scan-line"></div>
+    </div>
+
+    <header>
+        <ul>
+            <li><button class="nav-button" data-page="status-page">STAT</button></li>
+            <li><button class="nav-button" data-page="inventory-page">INV</button></li>
+            <li><button class="nav-button" data-page="data-page">DATA</button></li>
+            <li><button class="nav-button" data-page="map-page">MAP</button></li>
+            <li><button class="nav-button" data-page="radio-page">RADIO</button></li>
+        </ul>
+    </header>
+
+    <script src="js/navigation.js"></script>
+    <script src="js/system_status.js"></script>
+    <script src="js/themes.js"></script>
+</body>
+
+</html>
