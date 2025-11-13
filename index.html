@@ -11,8 +11,15 @@
 
 <body>
     <div class="screen">
-        <div class="pipboy-container page" data-page="status-page">
-            <img class="pipboy" src="images/white/pip1.png" alt="">
+        <div class="page" data-page="status-page">
+            <div class="status">
+                <img class="pipboy" src="images/white/pip1.png" alt="">
+                <div class="bottom-bar">
+                    <div class="disk-usage-container">C: <div class="disk-usage disk-c">100</div>/100</div>
+                    <div class="cpu-usage-container">CPU: <div class="cpu-usage-bar"></div></div>
+                    <div class="disk-usage-container">G: <div class="disk-usage disk-g">100</div>/100</div>
+                </div>
+            </div>
         </div>
         <div class="page hidden" data-page="inventory-page">
             <div class="apps">
@@ -36,18 +43,14 @@
             </div>
 
         </div>
-        <div class="page hidden" data-page="map-page">
-            <h1>map</h1>
-        </div>
-        <div class="page hidden" data-page="radio-page">
-            <h1>radio</h1>
-        </div>
+        <div class="page hidden" data-page="map-page"></div>
+        <div class="page hidden" data-page="radio-page"></div>
         <div class="scan-line"></div>
     </div>
 
     <header>
         <ul>
-            <li><button class="nav-button" data-page="status-page">STAT</button></li>
+            <li><button class="nav-button active" data-page="status-page">STAT</button></li>
             <li><button class="nav-button" data-page="inventory-page">INV</button></li>
             <li><button class="nav-button" data-page="data-page">DATA</button></li>
             <li><button class="nav-button" data-page="map-page">MAP</button></li>
